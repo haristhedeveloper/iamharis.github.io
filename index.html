@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: black;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .navbar .icon {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive {
+        position: relative;
+      }
+      .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    /* Add some space below the fixed navbar */
+    body {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+  <a href="#home">Home</a>
+  <a href="#page1">Page 1</a>
+  <a href="#page2">Page 2</a>
+  <a href="#page3">Page 3</a>
+  <a href="#page4">Page 4</a>
+  <a href="#page5">Page 5</a>
+  <a href="#page6">Page 6</a>
+  <a href="#page7">Page 7</a>
+  <a href="#page8">Page 8</a>
+  <a href="#page9">Page 9</a>
+  <a href="#page10">Page 10</a>
+  <a href="#page11">Page 11</a>
+  <a href="#page12">Page 12</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div style="padding: 20px;">
+  <!-- Add some content to simulate scrolling -->
+  <h1>Your Content Goes Here</h1>
+  <!-- ... -->
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }
+</script>
+
+</body>
+</html>
